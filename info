@@ -1,0 +1,130 @@
+// 1.Script taginin body taginin içində yazılmağı məsləhətdi.Çünki kodlar ardıcıl olaraq oxunduğu üçün əgər script tag head içində yazılsa 
+// javascript kodları işləməyəcək.
+// 2.Açar sözlər və stringlər arasındakı fərqi bildirmək üçün dırnaqdan istifadə olunur.
+// 3.alert(); - funksiyası ekrana bildiriş şəklində yazı çıxarır.
+// 4.window.alert() - funksiyası ekrana bildiriş şəklində yazı çıxarır.  (BOM OBYEKT YÖNÜMLÜ)
+// 5.document.write() - Səhifəyə hər hansı yazı daxil edir.
+// 6.document.writeln() -Səhifəyə hər hansı yazı daxil edir.Yeni bir sətrə keçir.
+// 7.script tagini <pre> taginin içində yazanda yazının şrifti dəyisir ve o zaman yeni sətrə kecir.Presiz keçmir.
+// 8.<noscript> tagi o zaman istifadə olunur ki  istifadəçi saytın ayarlarında js-ə icazə vermir.Bu zaman onda ekranda yazı çıxır.
+// 9.console.log("") - metodu browserde yazilari consoleda göstərir.
+// 10.debugger; - skript daxilində səhvləri tapmaq və düzəltmək üçün istifaə olunur.Debugging bir prosesdir.
+// 11.innerHTML - HTML teqlərinə müdaxilə edərək onlara hər hansı bir məlumat ötürə bilərik və ya dəyişdirə bilərik.
+// 12.document.getElementById("dunya").innerHTML="World";
+// Məlumat tipləri 1.Sadə:ədədi(number),simvollu(string),məntiqi(boolean)  2.Mürəkkəb: massivlər(array),obyektlər(objects) 
+// 3.Xüsusi:undefined,null
+
+// Dəyişən - müəyyən tip verilənləri özündə saxlayan adlı yaddaş sahəsidir.
+// Literal - dəyişənə mənimsədilə bilən verilən növüdür.Literallar hərf,ədəd vəya xüsusi simvollardan ibarət ola bilər.
+// 1. Dəyişənin adları hərf və ya _(alt xətt) və $(dollar) simvolu ilə başlaya bilər.Simvollar ilə başlamağında tək məqsəd həmin dəyişənin 
+// vacibliyini göstərir.Proqramçılar bu üsuldan istifadə edirlər.Əvvəlində rəqəm və ya digər simvollardan istifadə etmək olmaz.(Ədədləri ancaq dəyişənin adının sonunda və ya ortalarında istifadə etmək olar.Dəyişən adında yalnız 2simvoldan 
+// istifadə etmək olar.)Dəyişən adları yalnız ingilis əlifbası ilə yazılmalıdır.
+// 2.Dəyişənin adları həmişə mənalı olmalıdır.Dəyişənin adına baxan zaman içindəki dəyəri bildirən bir məna olmalıdır. 
+//  (kanalAdi camel case) və ya kanal_adi (alt xətt simvolundan istifadə etdikdə hamısı balaca hərflə yazılır.Ən çox istifadə olunan
+//  camel casedi.)
+//  3.Case sensitive -JS böyük və kiçik hərflərə qarşı həssasdır. ad , Ad, AD,aD hamısı fərqli dəyişənlərdir.
+//  4.JS tərəfindən istifadə edilən açar sözləri dəyişən adında istifadə etmək olmaz.Məsələn if, float, var, for və s.
+
+//  Dəyişənlər 3 cür elan oluna bilir.
+//  var - Standart dəyişənləri elan etmək üçün istifadə edilir.Global dəyişəndir səhifənin hər yerində görünür.
+//  var ilə yazdığımız dəyişən yenidən eyni adla yaradıla bilər.   var a=5   var a=8   consoleda error verməyəcək.Var ilə yazdığımız açar 
+//  sözlər scope daxilində keçərli deyil.
+//  let - Blok əhatə dairəli lokal dəyişənləri elan etmək üçün istifadə edilir.Lokal dəyişəndir yalnız bir əhatə üçün istifadə olunur.
+//  Let ilə yazdığımız dəyişən yenidən eyni adla yaradıla bilməz.   let a=5   let a=8   consoleda error verecek.
+//  const - Sabitləri elan etmək üçün istifadə edilir.   const ad="5" sabitlərə yerindəcə dəyər vermək lazımdır
+//  ( const ad; ----doğru deyil.)  const YAZİ= "Finish";  dəyişən adı sabit kimi hamısı böyük hərflərlə yazılır.
+//  escape operatorunda dəyişənin dəyərində hansısa simvoldan istifadə etmək istəyiriksə bu zaman simvoldan qabaq tərs slashdan (\)istifadə 
+//  olunur .   Məsələn : var ad= "\" Gullu Shammadli \""
+//  Operatorlar
+//  Qəbul etdiyi operand sayına görə operatorlar 3 qrupa bölünür.
+//         1.Unary - Bir operand qəbul edir.
+//         2.Binary - İki operand qəbul edir.
+//         3.Ternary - Üç operand qəbul edir.
+
+//         Ternary operatoruna proqramçılar bəzən qısa if yazılışı da deyirlər.
+//         sert?cavab1:cavab2;
+//     z= x + y burada x ,y operandlardır.
+// Apardığı əməliyyatlara görə isə operatorlar aşağıdakı qruplara bölünür.
+//         1.Mənimsətmə operatorları
+//         = -Mənimsətmə operatoru
+//         +=  -=   *=  /=  %=  **=     a=a+4 -> a+=4 
+//         2.Riyazi operatorları   (+,-,*,\,**,%)
+//         3.Müqayisə operatorları
+//         == -   Tipini yoxlamır.
+//         === -  Eynilə bərabərdir yəni tipini də yoxlayır.
+//         !=      !==  <  >   <=   >=  
+//         4.Məntiqi operatorlar
+//         && - Və    || - Və ya    ! -Deyil
+//         5.Bitwise operatorlar
+//         &   - Və
+//         |   - Və ya
+//         ^   - Xor ---1^0=1 ,1^1=0 ,0^0=0
+//         ~   - Bitləri əksinə çevirir.
+//         <<  - Bitləri sola doğru sürüşdürür.
+//         >>  - Bitləri sağa doğru sürüşdürür.
+//         >>> - Bitləri sağa doğru sürüşdürür.Ancaq işarə biti mənfi ola bilməz!
+//         6.Xüsusi operatorlar
+//         + -Birləşdirmə operatoru  
+//         , - Əməliyyatları ardıcıl şəkildə yerinə yetirir.
+//         \ - escape qaçış operatoru      
+//         \n - növbəti sətirə keçir.
+//         \t -TAB    
+//         \r -carriage return      
+//         \v -vertical tab      
+//         \f -form feed
+//         \' -Tək dırnaq     
+//         \" -Cüt dırnaq   
+//         \\ Tərs slaş
+
+//         Operatorların üstünlük sırası
+//         1. . []
+//         2.() ,new
+//         3.! ,~ ,-, +, ++ ,-- ,typeof,void ,delete
+//         4.* ,/ ,%
+//         5. +, -
+//         6. << ,>> ,>>>
+//         7. < ,<= ,> ,>= ,in ,instanceof
+//         8. == ,!= ,=== ,!==
+//         9. &
+//         10. ^
+//         11. |
+//         12.&&
+//         13.||
+//         14.?;
+//         15.= ,+= , -= ,*= ,/= , %= , <<= , >>= ,{">"}>>= , &= ,^= ,/=
+//         16.,
+//     Əgər a++ yazdıqda a-nın dəyəri 1 vahid artır amma əvvəlki dəyəri qaytarılır.
+//     Əgər ++a yazdıqda a-nın dəyəri 1 vahid artır həm də artırdığı qiyməti qaytarır.
+//     Stringlər yanız toplama operatoru ilə işləyə bilir.Yəni onları birləşdirir.
+
+// Math hazır funksiyaları
+// round-yuvarlaqlaşdırır.
+// ceil - özündən sonrakı ən kiçik ədədi göstərir.
+// floor- özündən əvvəlki ən böyük tam ədədi göstərir.
+// trunch- ədədin tam hissəsini göstərir.
+// sign- ədədin müsbət və ya mınfi olduğunu göstərir.
+// pow - ədədin qüvvətini tapır.
+// sqrt- kök altına salır.
+// abs -ədədi modulda yazıb müsbət şəkildə qaytarır.
+// min- çoxluq içərisindən minimumu verir.
+// max- çoxluq içərisindən maximumu verir.
+// random-random eded seçir.
+// toFixed() - məsələn ədəd 5.4564 dırsa vergülden sonra 2ədəd olmağını istəyirəmsə tofixden istifade olunur.
+
+// Stringlər üzərində əməllər
+// substring- stringdə istənilən hissəni kəsib götürmək üçün istifadə olunur.Ancaq müsbət
+// slice- stringdə istənilən hissəni kəsib götürmək üçün istifadə olunur.Həm mənfi həm müsbət, substringdən fərqi budur.
+// substr- stringdə istənilən hissəni kəsib götürmək üçün istifadə olunur.Birinci eded hardan başlandığını ,ikinci neçə element götürəcəyini göstərir.
+// replace- stringdə yerdəyişmə üçün istifadə olunur.Hansısa hissəni başqa hissəylə əvəz etmək.
+// i- replace içində böyük kiçik hərflərdə dəyişiklik üçün məsələn a və A kimi.onu işlədəndə bunlar eyni olur.
+// g- replace içində bütün eyni olan hərfləri dəyişdirmək üçün istifadə olunur.
+// toUpperCase- replace içində bütün hərfləri böyüyə keçirtmək üçün istifadə olunur.
+// toLowerCase- replace içində bütün hərfləri kiçiyə keçirtmək üçün istifadə olunur.
+// trim- lazınsız boşluqları kəsib atmaq üçün istifadə olunur.
+// concat- yeni string əlavə etmək üçün istifadə olunur.Bunu +la da etmək olur.
+// string[index]- stringin istənilən elementini tapmaq üçün.Length uzunluğu göstərir.
+// split- stringi array şəklində parçalara ayırıb göstərir.
+// includes- axtarılan elementin bizim stringimizdə olub olmadığını yoxlayır.
+// indexOf- stringin içində digər stringin mövqeyini tapırıq.
+// lastİndexOf - əgər stringde eyni hissədən 2 dəfə varsa lastla sonuncunu gedib göstərir.
+
