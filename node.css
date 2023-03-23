@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+    margin: 10px;
+}
+ul li{
+    border: 1px solid;
+    padding: 5px;
+    height: 35px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+ul li.active h1{
+    border-bottom: 1px solid;
+    margin-bottom: 5px;
+}
+.active{
+    height: 120px;
+    color: red;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid;
+}
+form *{
+    margin-bottom: 10px;
+    padding: 8px;
+}
+ul li button{
+    position: absolute;
+    right: 5px;
+    top: 9px;
+    padding: 5px;
+
+}
